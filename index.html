@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Restaurant Selector</title>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="assets/form.js" charset="utf-8"></script>
+    <script src="assets/config.js" charset="utf-8"></script>
+    <script src="assets/script.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <form class="search" action="index.html" method="post">
+      <input id="city" type="text" name="city" placeholder="City" required>
+      <select id="state" name="state" required>
+        <option disable selected hidden>State</option>
+      </select>
+      <button type="submit" name="search">Search</button>
+    </form>
+
+  </body>
+</html>

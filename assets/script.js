@@ -40,8 +40,12 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
+    // var request = {
+    //   placeId: result
+    // };
+
     addMarker(result);
-    console.log(result);
+    console.log();
   }
 }
 

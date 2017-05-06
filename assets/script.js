@@ -20,7 +20,7 @@ $( document ).ready(function() {
       var pick = Math.floor(Math.random()*$restaurants.length);
       $('form').append($result);
       $result.html($restaurants[pick].venue.name);
-      // console.log($restaurants[pick].venue);
+      console.log($restaurants[pick].venue);
       });
   });
 });

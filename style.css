@@ -1,1 +1,9 @@
-
+body{
+  height: 100%;
+  margin: 0;
+}
+#map {
+  height: 100%;
+  padding-bottom: 50%;
+  margin: 0;
+}

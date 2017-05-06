@@ -1,33 +1,69 @@
-$( document ).ready(function() {
-  var id = config.id;
-  var secret = config.secret;
-  function Input(city, state, price){
-    this.city = city;
-    this.state = state;
-    this.price = price;
-  }
-  $('form').submit(function search(event){
-    event.preventDefault();
-    var $city = $('#city').val();
-    var $state = $('#state').val();
-    var $price = $('#price').val();
-    var $result = $('<p></p>');
-    var input = new Input($city, $state, $price);
-    var url = 'https://api.foursquare.com/v2/venues/explore?client_id='+id+'&client_secret='+secret+'&v=20170401&mode=url&near='+input.city+','+input.state+'&price='+input.price+'&q=restaurant';
-    var $call = $.getJSON(url);
-    $call.done(function(data){
-      var $restaurants = $(data.response.groups[0].items);
-      var pick = Math.floor(Math.random()*$restaurants.length);
-      $('form').append($result);
-      $result.html($restaurants[pick].venue.name);
-      // console.log($restaurants[pick].venue);
-      });
+var map;
+var infoWindow;
+var service;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {
+      lat: -33.867,
+      lng: 151.206
+    },
+    zoom: 15,
+    styles: [{
+      stylers: [{ visibility: 'simplified' }]
+    },
+    {
+      elementType: 'labels',
+      stylers: [{ visibility: 'on' }]
+    }]
   });
-});
 
+  infoWindow = new google.maps.InfoWindow();
+  service = new google.maps.places.PlacesService(map);
 
+  // The idle event is a debounced event, so we can query & listen without
+  // throwing too many requests at the server.
+  map.addListener('idle', performSearch);
+}
 
-//   var $firstCall = $.getJSON(url);
-//   $firstCall.done(function(data){
-//     console.log(data);
-//   });
+function performSearch() {
+  var request = {
+    bounds: map.getBounds(),
+    keyword: 'restaurant'
+  };
+  service.radarSearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status !== google.maps.places.PlacesServiceStatus.OK) {
+    // console.error(status);
+    return;
+  }
+  for (var i = 0, result; result = results[i]; i++) {
+    addMarker(result);
+    console.log(result);
+  }
+}
+
+function addMarker(place) {
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+    icon: {
+      url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
+      anchor: new google.maps.Point(10, 10),
+      scaledSize: new google.maps.Size(10, 17)
+    }
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    service.getDetails(place, function(result, status) {
+      if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        console.error(status);
+        return;
+      }
+      infoWindow.setContent(result.name);
+      infoWindow.open(map, marker);
+    });
+  });
+}

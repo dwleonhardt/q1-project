@@ -2,7 +2,7 @@
 
 - Describe your app in 3 sentences.
 
-  My app chooses a restaurant for you based upon price, type of food, and location. It acts as an un-biased third party when you are unable to decide where to eat.  Strech goals will include incorperating other API's for example randomized activities in the area and making use of local storage  to save the past few restaurants visited so that way they do not get selected twice in a row. 
+  My app chooses a restaurant for you based upon price, type of food, and location. It acts as an un-biased third party when you are unable to decide where to eat.  Strech goals will include incorperating other API's for example randomized activities in the area and making use of local storage  to save the past few restaurants visited so that way they do not get selected twice in a row.
 
 - What is your technology you are using?
 
@@ -18,7 +18,8 @@
 
 - What is/are your API(s)?
 
-  Foursquare API
+  Google Places API
+  Google Maps API
 
   Maybe Google Maps
 

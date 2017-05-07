@@ -11,12 +11,13 @@ function Input(city, state, price){
   }
   $('form').submit(function search(event){
     event.preventDefault();
+    // loop and concat
     var $city = $('#city').val();
     var $state = $('#state').val();
     var $price = $('#price').val();
     var $result = $('<p></p>');
     var input = new Input($city, $state, $price);
-    var geo = 'https://maps.googleapis.com/maps/api/geocode/json?address='+$city+'+'+$state+'+'+'&region=us&opening_hours=open_now&key=AIzaSyBauiiK4RzU0EjgyAggzpVg3ogJs-CnWTg';
+    var geo = 'https://maps.googleapis.com/maps/api/geocode/json?address='+$city+'+'+$state+'+'+'&region=us&opening_hours=open_now&maxprice='+$price+'&key=AIzaSyBauiiK4RzU0EjgyAggzpVg3ogJs-CnWTg';
     var $call = $.getJSON(geo);
     $call.done(function(data){
       console.log($price);

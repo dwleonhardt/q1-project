@@ -16,19 +16,12 @@ function Input(city, state, price){
     var $price = $('#price').val();
     var $result = $('<p></p>');
     var input = new Input($city, $state, $price);
-    var geo = 'https://maps.googleapis.com/maps/api/geocode/json?address='+$city+'+'+$state+'+'+'&region=us&key=AIzaSyBauiiK4RzU0EjgyAggzpVg3ogJs-CnWTg';
+    var geo = 'https://maps.googleapis.com/maps/api/geocode/json?address='+$city+'+'+$state+'+'+'&region=us&opening_hours=open_now&key=AIzaSyBauiiK4RzU0EjgyAggzpVg3ogJs-CnWTg';
     var $call = $.getJSON(geo);
     $call.done(function(data){
-<<<<<<< HEAD
-      var $restaurants = $(data.response.groups[0].items);
-      var pick = Math.floor(Math.random()*$restaurants.length);
-      $('form').append($result);
-      $result.html($restaurants[pick].venue.name);
-      console.log($restaurants[pick].venue);
-=======
+      console.log($price);
       var location = data.results[0].geometry.location;
       initMap(location);
->>>>>>> google-places
       });
   });
 
@@ -41,7 +34,8 @@ function initMap(location) {
       lng: location.lng
     },
     zoom: 15,
-
+    draggable: false,
+    scrollwheel: false,
     styles: [{
       stylers: [{ visibility: 'simplified' }]
     },
@@ -75,35 +69,32 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
-    // var request = {
-    //   placeId: result
-    // };
     picker.push(result);
-    // addMarker(result);
-
   }
-  console.log(picker[Math.floor(Math.random() * picker.length)]);
-  addMarker(picker[Math.floor(Math.random() * picker.length)]);
+  var restaurant = picker[Math.floor(Math.random() * picker.length)];
+  addMarker(restaurant);
 }
 
 function addMarker(place) {
   var marker = new google.maps.Marker({
     map: map,
     position: place.geometry.location,
-    icon: {
-      url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
-      anchor: new google.maps.Point(10, 10),
-      scaledSize: new google.maps.Size(10, 17)
-    }
+    // icon: {
+    //   url: 'assets/images/food.svg',
+    //   anchor: new google.maps.Point(10, 10),
+    //   scaledSize: new google.maps.Size(30, 45)
+    // }
   });
 
   google.maps.event.addListener(marker, 'click', function() {
-    service.getDetails(place, function(result, status) {
+    service.getDetails(place, function(restaurant, status) {
       if (status !== google.maps.places.PlacesServiceStatus.OK) {
         console.error(status);
         return;
       }
-      infoWindow.setContent(result.name);
+      console.log(restaurant);
+      infoWindow.setContent(restaurant.name);
+
       infoWindow.open(map, marker);
     });
   });

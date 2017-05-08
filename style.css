@@ -1,6 +1,21 @@
 body{
   height: 100%;
   margin: 0;
+
+}
+.content {
+  display: flex;
+  height: 100vh;
+  margin: 50px 110px;
+  background: blue;
+  /*border: 1px solid black;*/
+}
+select, input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+button {
+  margin-top: 10px;
 }
 #map {
   height: 100%;

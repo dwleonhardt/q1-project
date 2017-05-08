@@ -6,25 +6,37 @@
     <title>Restaurant Picker</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" defer></script>
     <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBauiiK4RzU0EjgyAggzpVg3ogJs-CnWTg&libraries=places"></script>
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
+
     <script src="assets/scripts/form.js" charset="utf-8" defer></script>
     <script src="assets/scripts/script.js" type="text/javascript" defer></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <form class="search" action="index.html" method="post">
-      <input id="city" type="text" name="city" placeholder="City" required>
-      <select id="state" name="state" required>
-        <option disable selected hidden>State</option>
-      </select>
-      <select id="price" name="" required>
-        <option disable selected hidden>Select Price</option>
-        <option value="1">Inexpensive</option>
-        <option value="2">Budget Friendly</option>
-        <option value="3">Expensive</option>
-        <option value="4">Very Expensive</option>
-      </select>
-      <button type="submit" name="search">Search</button>
-    </form>
-    <div id="map"></div>
+    <div class="container-fluid">
+      <div class="page-header ">
+        <h1>Restaurant Roulette<small>Spend less time deciding.</small></h1>
+      </div>
+      <div class="row content">
+        <form class="search col-md-12" action="index.html" method="post">
+          <input class="col-md-2 col-md-offset-1 col-xs-12" id="city" type="text" name="city" placeholder="City" required>
+          <select class="col-md-2 col-md-offset-2 col-xs-12" id="state" name="state" required>
+            <option disable selected hidden>State</option>
+          </select>
+          <select class="col-md-2 col-md-offset-2 col-xs-12" id="price" name="" required>
+            <option disable selected hidden>Select Price</option>
+            <option value="1">Inexpensive</option>
+            <option value="2">Budget Friendly</option>
+            <option value="3">Expensive</option>
+            <option value="4">Very Expensive</option>
+          </select>
+          <button class="col-md-2 col-md-offset-2 col-xs-12" type="submit" name="search">What Should I Eat</button>
+        </form>
+      </div>
+      <div id="map"></div>
+    </div>
   </body>
 </html>

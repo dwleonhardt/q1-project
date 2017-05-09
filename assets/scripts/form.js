@@ -55,11 +55,12 @@ $( document ).ready(function() {
                   "WI",
                   "WV",
                   "WY"];
+    var $stateSelect = $('#state');
     for (var i = 0; i < states.length; i++) {
       var $option = $('<option></option>');
-      var $stateSelect = $('#state');
       $option.html(states[i]);
       $stateSelect.append($option);
     }
+    $('select').material_select();
   })();
 });

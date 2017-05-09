@@ -1,3 +1,20 @@
+header {
+  display: flex;
+  height: 100vh;
+  padding-top: 5%;
+  background-color: rgb(40, 9, 78);
+}
+h1, p, .nav {
+  color: white;
+}
+
+.highlite {
+  color: rgb(18, 220, 235);
+}
+.btn-large {
+  background-color: rgb(225, 98, 70);
+}
+
 body{
   height: 100%;
   margin: 0;
@@ -7,15 +24,13 @@ body{
   display: flex;
   height: 100vh;
   margin: 50px 110px;
-  background: blue;
-  /*border: 1px solid black;*/
 }
 select, input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 button {
-  margin-top: 10px;
+  margin-top: 5%;
 }
 #map {
   height: 100%;

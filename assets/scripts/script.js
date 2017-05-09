@@ -12,6 +12,7 @@ function Input(city, state, price){
 
   var input = new Input();
 
+
   $('form').submit(function search(event){
     event.preventDefault();
     // loop and concat?
@@ -56,16 +57,13 @@ function initMap(location) {
   service = new google.maps.places.PlacesService(map);
   // search =  google.maps.places.PlaceSearchRequest();
   console.log(google.maps.places.PlaceSearchRequest);
-  // The idle event is a debounced event, so we can query & listen without
-  // throwing too many requests at the server.
   map.addListener('idle', performSearch);
 }
 
 function performSearch() {
   var request = {
     bounds: map.getBounds(),
-    type: 'restaurant',
-    // keyword: 'pho'
+    type: 'restaurant'
   };
   service.radarSearch(request, callback);
 }

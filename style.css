@@ -21,8 +21,8 @@ body{
 
 }
 .content {
-  display: flex;
-  height: 100vh;
+  /*display: flex;*/
+  /*height: 100vh;*/
   margin: 50px 110px;
 }
 select, input {
@@ -33,8 +33,16 @@ button {
   margin-top: 5%;
 }
 #map {
-  height: 100%;
   width: 50%;
   padding-bottom: 50%;
-  margin: 0;
+  margin-right: 5px;
+  border: 2px solid black;
+}
+table {
+  background-color:rgb(15, 183, 196);
+  padding: 20px;
+}
+thead {
+  background-color: rgb(15, 183, 196);
+  border-bottom: 1px solid black;
 }

@@ -56,7 +56,7 @@ function initMap(location) {
   infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
   // search =  google.maps.places.PlaceSearchRequest();
-  console.log(google.maps.places.PlaceSearchRequest);
+  // console.log(google.maps.places.PlaceSearchRequest);
   map.addListener('idle', performSearch);
 }
 
@@ -79,6 +79,7 @@ function callback(results, status) {
   }
   var restaurant = picker[Math.floor(Math.random() * picker.length)];
   addMarker(restaurant);
+  details(restaurant);
 }
 
 function addMarker(place) {
@@ -86,17 +87,22 @@ function addMarker(place) {
     map: map,
     position: place.geometry.location,
   });
+}
+function details(place) {
+  service.getDetails(place, function(restaurant, status) {
+    if (status !== google.maps.places.PlacesServiceStatus.OK) {
+      console.error(status);
+      return;
+    }
+    // if (restaurant.opening_hours.open_now === false) {
+    //   console.log('closed please try again');
+    // }
+    $('#name').html(restaurant.name);
+    $('#phone').html(restaurant.formatted_phone_number);
+    console.log($('a[href]').attr('href', restaurant.website));
+    //
+    // console.log(restaurant.name);
+    // console.log(restaurant.website);
 
-  google.maps.event.addListener(marker, 'click', function() {
-    service.getDetails(place, function(restaurant, status) {
-      if (status !== google.maps.places.PlacesServiceStatus.OK) {
-        console.error(status);
-        return;
-      }
-      console.log(restaurant);
-      infoWindow.setContent(restaurant.name);
-
-      infoWindow.open(map, marker);
-    });
   });
 }

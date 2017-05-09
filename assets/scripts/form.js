@@ -63,4 +63,11 @@ $( document ).ready(function() {
     }
     $('select').material_select();
   })();
+
+$("#start").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".content").offset().top
+    }, 900);
+});
+
 });

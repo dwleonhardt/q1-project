@@ -41,16 +41,19 @@
 
       <div class="row content">
         <form class="search col m12" action="index.html" method="post">
-          <input class="col m4" id="city" type="text" name="city" placeholder="City" required>
-          <select class="col m4" id="state" name="state" required>
+          <input class="col m3" id="city" type="text" name="city" placeholder="City" required>
+          <select class="col m3" id="state" name="state" required>
             <option disabled selected>State</option>
           </select>
-          <select class="col m4" id="price" name="" required>
+          <select class="col m3" id="price" name="price" required>
             <option disabled selected>Select Price</option>
             <option value="1">Inexpensive</option>
             <option value="2">Budget Friendly</option>
             <option value="3">Expensive</option>
             <option value="4">Very Expensive</option>
+          </select>
+          <select class="col m3" id="radius" name="radius" required>
+            <option disabled selected>Select Radius</option>
           </select>
           <button class="btn-large waves-effect col m2 offset-m5" type="submit" name="search">Where Should I Eat</button>
         </form>

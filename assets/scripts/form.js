@@ -61,6 +61,15 @@ $( document ).ready(function() {
       $option.html(states[i]);
       $stateSelect.append($option);
     }
+    // $('select').material_select();
+  })();
+  (function buildRadius() {
+    var $radiusSelect = $('#radius');
+    for (var i = 0; i < 31; i++) {
+      var $option = $('<option></option>');
+      $option.html(i);
+      $radiusSelect.append($option);
+    }
     $('select').material_select();
   })();
 

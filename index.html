@@ -17,6 +17,7 @@
     <script src="assets/scripts/form.js" charset="utf-8" defer></script>
     <script src="assets/scripts/script.js" type="text/javascript" defer></script>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
       <body>
     <div class="container-fluid">
@@ -27,13 +28,11 @@
               <div class="col m5">
                 <h1 class="col m10">Restaurant Roulette</h1>
                 <p class="col m12"><span class="highlite">Restaurant Roulette</span> is a site for those who have trouble deciding where to eat, those who want to be adventerous, or those who are just plain lazy. Scroll down to give it a try!</p>
-
               </div>
-                <ul class="col m2 offset-m4 nav">
+                <ul class="col m2 offset-m4 offset-s4 nav">
                   <div class="section">
                     <li id="start">Get Started</li>
                   </div>
-
                 </ul>
             </div>
           </div>
@@ -44,10 +43,10 @@
         <form class="search col m12" action="index.html" method="post">
           <input class="col m4" id="city" type="text" name="city" placeholder="City" required>
           <select class="col m4" id="state" name="state" required>
-            <option disable selected hidden>State</option>
+            <option disabled selected>State</option>
           </select>
           <select class="col m4" id="price" name="" required>
-            <option disable selected hidden>Select Price</option>
+            <option disabled selected>Select Price</option>
             <option value="1">Inexpensive</option>
             <option value="2">Budget Friendly</option>
             <option value="3">Expensive</option>
@@ -57,11 +56,12 @@
         </form>
       </div>
       <div class="row">
-          <div class="col m6 col offset-m3" id="map"></div>
+          <div class="col s6 col offset-s3" id="map"></div>
           <table class="col m2 z-depth-2">
             <thead>
               <tr>
                 <th>Here you go!</th>
+                <th></th>
               </tr>
             </thead>
             <tr>

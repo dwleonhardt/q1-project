@@ -49,6 +49,7 @@ button {
 table {
   background-color:rgb(15, 183, 196);
   padding: 20px;
+  border: 2px solid black;
 }
 thead {
   background-color: rgb(15, 183, 196);

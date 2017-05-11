@@ -13,9 +13,14 @@ function Input(city, state, price, radius){
 
   var input = new Input();
 
-
   $('form').submit(function search(event){
     event.preventDefault();
+    
+    $("#start").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".content").offset().top
+        }, 900);
+    });
     // loop and concat?
     input.city = $('#city').val();
     input.state = $('#state').val();
@@ -60,6 +65,7 @@ function initMap(location) {
     location: latLng,
     radius: input.radius,
     types: ['restaurant'],
+    openNow: true,
     minPriceLevel: input.price,
     maxPriceLevel: input.price
   };

@@ -73,6 +73,11 @@ form {
   color: white;
 }
 
+/*.sampleClass {float:left;}
+@media only screen and (max-width: 800px){
+	.sampleClass {float:none;}
+}*/
+
 @media(min-width: 800px){
   #mobileButton {
     display: none;

@@ -15,11 +15,11 @@ function Input(city, state, price, radius){
   $('form').submit(function search(event){
     event.preventDefault();
 
-    $("#start").click(function() {
+    // $("#start").click(function() {
         $('html, body').animate({
             scrollTop: $(".content").offset().top
         }, 900);
-    });
+    // });
     // loop and concat?
     input.city = $('#city').val();
     input.state = $('#state').val();

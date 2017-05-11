@@ -35,8 +35,8 @@ body{
 }
 .content {
   /*display: flex;*/
-  /*height: 100vh;*/
-  margin: 50px 110px;
+  height: 80vh;
+  /*margin: 50px 110px;*/
 }
 select, input {
   margin-top: 10px;
@@ -80,11 +80,6 @@ form {
 
 @media(min-width: 800px){
   #mobileButton {
-    display: none;
-  }
-}
-@media(max-width: 800px){
-  #browserForm {
     display: none;
   }
 }

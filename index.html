@@ -16,6 +16,7 @@
 
     <script src="assets/scripts/form.js" charset="utf-8" defer></script>
     <script src="assets/scripts/script.js" type="text/javascript" defer></script>
+    <script src="assets/scripts/mobile.js" charset="utf-8" defer></script>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -24,7 +25,7 @@
       <div class="row">
         <header class="z-depth-2">
           <div class="container">
-            <div class="row">
+            <div class="row" id="reAttach">
               <div class="col m5">
                 <h1 class="col m10">Restaurant Roulette</h1>
                 <p class="col m12"><span class="highlite">Restaurant Roulette</span> is a site for those who have trouble deciding where to eat, those who want to be adventerous, or those who are just plain lazy. Scroll down to give it a try!</p>
@@ -34,8 +35,9 @@
                     <li id="start">Get Started</li>
                   </div> -->
                 </ul>
+
             </div>
-            <form class="search col m12" action="index.html" method="post">
+            <form class="search col m12" action="index.html" method="post" id="input">
               <input class="col m3" id="city" type="text" name="city" placeholder="City" required>
               <select class="col m3" id="state" name="state" required>
                 <option value="" disabled selected>State</option>
@@ -52,14 +54,19 @@
               </select>
               <button class="btn-large waves-effect col m4 offset-m4" type="submit" id="start" name="search">Where Should I Eat</button>
             </form>
+            <div class="row">
+
+              <a class="waves-effect waves-light btn col s4 offset-s4" id="mobileButton" href="#modal1">Start!</a>
+            </div>
           </div>
         </header>
       </div>
       <div class="row">
       </div>
+      <div class="container-fluid">
+        <div class="row">
 
-      <div class="row content">
-
+          <div id="modal1" class="modal bottom-sheet col s12"></div> </div>
       </div>
       <div class="row">
           <div class="col s8" id="map"></div>
@@ -85,6 +92,5 @@
           </table>
       </div>
     </div>
-
   </body>
 </html>

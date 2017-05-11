@@ -3,7 +3,6 @@ var map;
 var infoWindow;
 var service;
 
-
 function Input(city, state, price, radius){
   this.city = city;
   this.state = state;
@@ -15,7 +14,7 @@ function Input(city, state, price, radius){
 
   $('form').submit(function search(event){
     event.preventDefault();
-    
+
     $("#start").click(function() {
         $('html, body').animate({
             scrollTop: $(".content").offset().top

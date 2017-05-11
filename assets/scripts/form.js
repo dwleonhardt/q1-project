@@ -71,12 +71,7 @@ $( document ).ready(function() {
       $radiusSelect.append($option);
     }
     $('select').material_select();
+
+    $('.modal').modal();
   })();
-
-// $("#start").click(function() {
-//     $('html, body').animate({
-//         scrollTop: $(".content").offset().top
-//     }, 900);
-// });
-
 });

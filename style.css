@@ -60,8 +60,26 @@ thead {
   border-bottom: 1px solid black;
 }
 a {
+
   color: black;
 }
 form {
-  color:white;  
+  color:white;
+}
+#modal1{
+  max-height: 100vh;
+  background-color: rgb(69, 16, 135);
+  padding-bottom:25px;
+  color: white;
+}
+
+@media(min-width: 800px){
+  #mobileButton {
+    display: none;
+  }
+}
+@media(max-width: 800px){
+  #browserForm {
+    display: none;
+  }
 }

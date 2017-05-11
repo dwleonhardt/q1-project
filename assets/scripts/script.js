@@ -15,12 +15,10 @@ function Input(city, state, price, radius){
   $('form').submit(function search(event){
     event.preventDefault();
 
-    // $("#start").click(function() {
-        $('html, body').animate({
-            scrollTop: $(".content").offset().top
-        }, 900);
-    // });
-    // loop and concat?
+    $('html, body').animate({
+        scrollTop: $(".content").offset().top
+    }, 900);
+
     input.city = $('#city').val();
     input.state = $('#state').val();
     input.price = $('#price').val();
@@ -113,15 +111,13 @@ function details(place) {
       console.error(status);
       return;
     }
-    // if (restaurant.opening_hours.open_now === false) {
-    //   console.log('closed please try again');
-    // }
-    $('#name').html(restaurant.name);
-    $('#phone').html(restaurant.formatted_phone_number);
-    console.log($('a[href]').attr('href', restaurant.website));
-    //
-    // console.log(restaurant.name);
-    console.log(restaurant.price_level);
-
+    $('#name').get(0).lastChild.nodeValue = restaurant.name;
+    $('#phone').get(0).lastChild.nodeValue = restaurant.formatted_phone_number;
+    if (restaurant.website) {
+      var $webButton = $('<a href=""><button class="btn" type="button" name="button" >Website</button></a>');
+      $webButton.attr('href', restaurant.website);
+      $('#phone').append($webButton);
+      console.log($webButton);
+    }
   });
 }

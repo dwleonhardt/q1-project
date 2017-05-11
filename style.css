@@ -9,13 +9,6 @@ header {
 h1, p, .nav {
   color: white;
 }
-.nav{
-  margin-top: 20%;
-  font-size: 20px;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
 
 .divider {
   background-color: rgb(225, 98, 70);
@@ -36,7 +29,7 @@ body{
 .content {
   /*display: flex;*/
   height: 80vh;
-  /*margin: 50px 110px;*/
+  margin: 50px 110px;
 }
 select, input {
   margin-top: 10px;
@@ -51,11 +44,7 @@ button {
   /*margin-right: 5px;*/
   border: 2px solid black;
 }
-table {
-  background-color:rgb(15, 183, 196);
-  padding: 20px;
-  /*border: 2px solid black;*/
-}
+
 thead {
   border-bottom: 1px solid black;
 }
@@ -66,9 +55,18 @@ a {
 form {
   color:white;
 }
+li{
+  font-size: 16px;
+  padding-bottom: 5%;
+}
+i {
+  display: inline-block;
+  vertical-align: middle;
+}
 #modal1{
   max-height: 100vh;
   background-color: rgb(69, 16, 135);
+  padding-top: 25px;
   padding-bottom:25px;
   color: white;
 }
@@ -81,5 +79,13 @@ form {
 @media(min-width: 800px){
   #mobileButton {
     display: none;
+  }
+}
+@media(max-width: 800px){
+  .content {
+    margin: 0;
+  }
+  #map{
+    width: 100%;
   }
 }

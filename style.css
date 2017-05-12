@@ -2,8 +2,17 @@ header {
   display: flex;
   height: 100vh;
   padding-top: 5%;
-  background-color: rgb(40, 9, 78);
+  /*background-color: rgb(40, 9, 78);*/
+  background-image: url('https://images.pexels.com/photos/8313/food-eating-potatoes-beer-8313.jpg?w=1260&h=750&auto=compress&cs=tinysrgb');
+  background-repeat:no-repeat;
+  background-size:cover;
   position: relative;
+}
+.container{
+  padding: 20px;
+  margin-bottom: auto;
+  /*border: 2px solid black; */
+  background-color: rgba(68, 69, 69, 0.8);
 }
 
 h1, p, .nav {

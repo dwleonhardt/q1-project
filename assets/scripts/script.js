@@ -70,19 +70,7 @@ function initMap(location) {
   infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, callback);
-  // search =  google.maps.places.PlaceSearchRequest();
-  // console.log(google.maps.places.PlaceSearchRequest);
-  // map.addListener('idle', performSearch);
 }
-
-// function performSearch() {
-//   var request = {
-//     bounds: map.getBounds(),
-//     type: 'restaurant'
-//   };
-//   service.radarSearch(request, callback);
-// }
-
 
 function callback(results, status) {
   var picker = [];

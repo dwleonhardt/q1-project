@@ -21,6 +21,3 @@ function checkSize() {
       $('i').addClass('medium');
     }
 }
-
-
-// <div id="modal1" class="modal bottom-sheet">

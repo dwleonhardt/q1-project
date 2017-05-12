@@ -9,7 +9,6 @@ function checkSize() {
   var $map = $('#map');
 
     if ($(window).width() <= 800){
-      $map.detach();
       $('.content').append($map);
       $modal.html($inputForm);
       $('i').removeClass('medium');

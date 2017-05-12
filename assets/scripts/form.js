@@ -71,7 +71,6 @@ $( document ).ready(function() {
       $radiusSelect.append($option);
     }
     $('select').material_select();
-
     $('.modal').modal();
   })();
 });

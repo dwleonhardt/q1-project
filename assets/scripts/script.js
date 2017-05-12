@@ -114,10 +114,9 @@ function details(place) {
     $('#name').get(0).lastChild.nodeValue = restaurant.name;
     $('#phone').get(0).lastChild.nodeValue = restaurant.formatted_phone_number;
     if (restaurant.website) {
-      var $webButton = $('<a href=""><button class="btn" type="button" name="button" >Website</button></a>');
+      var $webButton = $('<a href="" taget="_blank"><button class="btn col m3 col s12" type="button" name="button">Website</button></a>');
       $webButton.attr('href', restaurant.website);
       $('#phone').append($webButton);
-      console.log($webButton);
     }
   });
 }

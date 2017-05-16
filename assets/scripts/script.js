@@ -15,6 +15,8 @@ function Input(city, state, price, radius){
   $('form').submit(function search(event){
     event.preventDefault();
 
+    $( "a" ).remove( ":contains('Website')" );
+
     $('html, body').animate({
         scrollTop: $(".content").offset().top
     }, 900);
@@ -23,14 +25,12 @@ function Input(city, state, price, radius){
     input.state = $('#state').val();
     input.price = $('#price').val();
     input.radius = $('#radius').val() * 1609.34;
-    console.log(input.radius);
     if (input.state === 'State' || input.price === 'Select Price') {
       alert('Please do something');
     } else{
         var geo = 'https://maps.googleapis.com/maps/api/geocode/json?address='+input.city+'+'+input.state+'+'+'&region=us&key=AIzaSyBauiiK4RzU0EjgyAggzpVg3ogJs-CnWTg';
         var $call = $.getJSON(geo);
         $call.done(function(data){
-          console.log(input.price);
           var location = data.results[0].geometry.location;
           initMap(location);
         });
@@ -102,7 +102,7 @@ function details(place) {
     $('#name').get(0).lastChild.nodeValue = restaurant.name;
     $('#phone').get(0).lastChild.nodeValue = restaurant.formatted_phone_number;
     if (restaurant.website) {
-      var $webButton = $('<a href="" taget="_blank"><button class="btn col m12 col s12" type="button" name="button">Website</button></a>');
+      var $webButton = $('<a id="link" href="" taget="_blank"><button class="btn col m12 col s12" type="button" name="button">Website</button></a>');
       $webButton.attr('href', restaurant.website);
       $('#phone').append($webButton);
     }

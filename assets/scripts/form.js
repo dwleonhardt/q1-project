@@ -72,4 +72,8 @@ $( document ).ready(function() {
     $('select').material_select();
     $('.modal').modal();
   })();
+
+  $('.btn-large').on('click', function(event){
+    $('#link').remove();
+  });
 });
